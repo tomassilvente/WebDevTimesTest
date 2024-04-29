@@ -3,7 +3,7 @@ export const getNews = async (query = 'Elon Musk') =>{
     let articles = []
 
     //New Api Fetching
-    const NewsApiRes = await fetch(`https://newsapi.org/v2/top-headlines?q=${query}&from=2024-04-26&sortBy=publishedAt&apiKey=${process.env.VITE_NEWS_API_KEY}`)
+    const NewsApiRes = await fetch(`https://newsapi.org/v2/top-headlines?q=${query}&from=2024-04-26&sortBy=publishedAt&apiKey=0d68055f5a3847c08722c9a4794cb598`)
     const NewApiResponse = await NewsApiRes.json()
     const NewApiArticles = NewApiResponse.articles
    
@@ -12,7 +12,7 @@ export const getNews = async (query = 'Elon Musk') =>{
     ))
 
     //New York Times Fetching
-    const NYTRes = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.VITE_NYT_API_KEY}`)
+    const NYTRes = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=afLGeNpjFu8N8hOnWySqGtUjIxYECZ5J`)
     const NYTResponse = await NYTRes.json()
     const NYTArticles = NYTResponse.response.docs
     
@@ -21,7 +21,7 @@ export const getNews = async (query = 'Elon Musk') =>{
     ))
 
     //New York Times Fetching
-    const GuardianaApisRes = await fetch(`https://content.guardianapis.com/search?q=${query}&from-date=2014-04-26&api-key=${process.env.VITE_GUARDIANA_API_KEY}`)
+    const GuardianaApisRes = await fetch(`https://content.guardianapis.com/search?q=${query}&from-date=2014-04-26&api-key=1e2ff3ec-7371-4073-b1e5-82b53f97b383`)
     const GuardianaApisResponse = await GuardianaApisRes.json()
     const GuardianaArticles = GuardianaApisResponse.response.results
     
